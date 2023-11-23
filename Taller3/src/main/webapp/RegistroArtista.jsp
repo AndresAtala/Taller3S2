@@ -10,6 +10,9 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <title>Agregar Asistente</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <meta charset="UTF-8">
     <title>Agregar Artista</title>
 </head>
 <body>
@@ -19,6 +22,7 @@
     Género Musical: <input type="text" name="generoMusical" required><br>
     <input type="submit" value="Agregar Artista">
 </form>
+<li><a href="index.jsp">INICIO</a></li>
 </body>
 </html>
 

@@ -9,6 +9,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Agregar Asistente</title>
+        <link rel="stylesheet" type="text/css" href="Style.css">
+    </head>
     <meta charset="UTF-8">
     <title>Agregar Evento</title>
 </head>
@@ -21,5 +26,6 @@
     Artistas: <input type="text" name="artistas" required><br>
     <input type="submit" value="Agregar Evento">
 </form>
+<li><a href="index.jsp">INICIO</a></li>
 </body>
 </html>
