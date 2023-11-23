@@ -14,15 +14,20 @@ import static org.jooq.impl.DSL.table;
 public class ArtistaDAO {
 
     public void agregarArtista(DSLContext query, Artista artista) {
-        try {
-            query.insertInto(table("Artista"),
-                            field("nombreArtistico"),
-                            field("generoMusical"))
-                    .values(artista.getNombreArtistico(), artista.getGeneroMusical())
-                    .execute();
-        } catch (Exception e) {
-            e.printStackTrace();
-            // Manejar la excepción adecuadamente
+        if (!existeArtista(query, artista.getNombreArtistico())) {
+            try {
+                query.insertInto(table("Artista"),
+                                field("nombreArtistico"),
+                                field("generoMusical"))
+                        .values(artista.getNombreArtistico(), artista.getGeneroMusical())
+                        .execute();
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Manejar la excepción adecuadamente
+            }
+        } else {
+            // Puedes manejar la lógica para indicar que el artista ya existe
+            System.out.println("El artista ya existe.");
         }
     }
 
@@ -42,5 +47,13 @@ public class ArtistaDAO {
                 record.get(field("generoMusical", String.class))
         );
     }
-}
 
+    private boolean existeArtista(DSLContext query, String nombreArtistico) {
+        Result<Record> result = query.select()
+                .from(table("Artista"))
+                .where(field("nombreArtistico").eq(nombreArtistico))
+                .fetch();
+
+        return !result.isEmpty();
+    }
+}

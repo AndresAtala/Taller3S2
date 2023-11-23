@@ -1,6 +1,6 @@
 package com.gestionEvento.model;
 
-class Asistente {
+public class Asistente {
     private String nombre;
     private String telefono;
     private String preferenciasMusicales;

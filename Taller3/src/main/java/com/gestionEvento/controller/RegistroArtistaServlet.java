@@ -39,6 +39,6 @@ public class RegistroArtistaServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("RegistroArtistaExitoso.jsp");
     }
 }

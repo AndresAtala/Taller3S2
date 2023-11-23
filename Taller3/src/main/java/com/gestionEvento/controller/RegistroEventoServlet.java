@@ -41,7 +41,7 @@ public class RegistroEventoServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("CreacionEventoExitoso.jsp");
     }
 }
 
