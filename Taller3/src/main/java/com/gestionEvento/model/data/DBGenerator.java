@@ -40,41 +40,6 @@ public class DBGenerator {
     }
 
     private static void crearTablas(DSLContext create) {
-        create.createTableIfNotExists("Libro")
-                .column("titulo", VARCHAR(100))
-                .column("autor", VARCHAR(100))
-                .column("isbn", VARCHAR(20))
-                .column("genero", VARCHAR(50))
-                .column("anoPublicacion", INTEGER)
-                .constraint(primaryKey("isbn"))
-                .execute();
-
-        create.createTableIfNotExists("Usuario")
-                .column("nombre", VARCHAR(100))
-                .column("id", VARCHAR(20))
-                .column("direccion", VARCHAR(200))
-                .column("numeroTelefono", VARCHAR(15))
-                .column("correoElectronico", VARCHAR(100))
-                .constraint(primaryKey("id"))
-                .execute();
-
-        create.createTableIfNotExists("Prestamo")
-                .column("isbn", VARCHAR(20).nullable(false))
-                .column("idUsuario", VARCHAR(20).nullable(false))
-                .column("fechaInicio", DATE)
-                .column("fechaDevolucion", DATE)
-                .constraint(primaryKey("isbn", "idUsuario"))
-                .constraint(foreignKey("isbn").references("Libro", "isbn"))
-                .constraint(foreignKey("idUsuario").references("Usuario", "id"))
-                .execute();
-
-        create.createTableIfNotExists("Biblioteca")
-                .column("nombre", VARCHAR(100))
-                .column("direccion", VARCHAR(200))
-                .column("numeroTelefono", VARCHAR(15))
-                .constraint(primaryKey("nombre"))
-                .execute();
-
         create.createTableIfNotExists("Artista")
                 .column("nombreArtistico", VARCHAR(100))
                 .column("generoMusical", VARCHAR(50))
