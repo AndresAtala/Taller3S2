@@ -1,6 +1,6 @@
 package com.gestionEvento.model;
 
-class EventoMusical {
+public class EventoMusical {
     private String nombreEvento;
     private String fecha;
     private String lugar;

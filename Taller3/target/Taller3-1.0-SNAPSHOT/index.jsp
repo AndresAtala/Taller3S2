@@ -5,8 +5,9 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1><%= "Productora" %></h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<li><a href="RegistroArtista.jsp">Agregar Artistas</a></li>
+<li><a href="AgregarEvento.jsp">Agregar Evento</a></li>
 </body>
 </html>
